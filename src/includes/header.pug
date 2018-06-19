@@ -1,0 +1,21 @@
+//- includes/header.pug
+header.header
+    .row.align-middle
+        .columns.small-12.medium-6.large-3
+            a.header_logo(href="/")
+                img(src="templates/_ares/img/svg/logo.svg", alt="")
+        .columns.small-12.medium-6.large-6.large-offset-3
+            .row.align-middle
+                .columns.small-12.medium-6
+                    - var menuItem = ['Воспоминания', 'победители'];
+                    ul.menu.align-center
+                        each val in menuItem
+                            li.menu_item
+                                a(href='#')= val
+                .columns.small-12.medium-6
+                    - var socials = ['i-vk-fill', 'i-youtube', 'i-facebook-fill', 'i-twitter-fill', 'i-instagram', 'i-odnoklassniki-fill',];
+                    ul.social.align-right
+                        each social in socials
+                            li.social_item
+                                a(href='#')
+                                    i(class=social)

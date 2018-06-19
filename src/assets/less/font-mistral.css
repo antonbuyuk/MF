@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Mistral';
+  src: url('../fonts/Mistral/Mistral.woff') format('woff'),
+       url('../fonts/Mistral/Mistral.ttf') format('truetype'),
+       url('../fonts/Mistral/Mistral.svg#Mistral') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'mistral';
+  src: url('../fonts/Mistral/mistral.eot');
+  src: url('../fonts/Mistral/mistral.woff2') format('woff2'),
+       url('../fonts/Mistral/mistral.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
