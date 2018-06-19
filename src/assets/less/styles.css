@@ -26,7 +26,7 @@ html {
     font-size: 14px;
   }
 }
-@media (min-width: 50.375em) and (max-width: 60em) {
+@media (min-width: 50.375em) and (max-width: 64em) {
   html {
     font-size: 15px;
   }
@@ -36,7 +36,7 @@ html {
     font-size: 14px;
   }
 }
-@media (min-width: 75.375em) and (max-width: 84em) {
+@media (min-width: 75.375em) and (max-width: 120em) {
   html {
     font-size: 15px;
   }
@@ -67,9 +67,25 @@ a {
 .header_logo {
   position: relative;
 }
-@media (max-width: 39.975em) {
+.header_logo-pc {
+  display: block;
+}
+@media (max-width: 63.975em) {
+  .header_logo-pc {
+    display: none;
+  }
+}
+.header_logo-mob {
+  display: none;
+}
+@media (max-width: 63.975em) {
+  .header_logo-mob {
+    display: block;
+  }
+}
+@media (max-width: 63.975em) {
   .header {
-    top: 1rem;
+    top: 2rem;
     left: 1rem;
     right: 1rem;
   }
@@ -100,6 +116,11 @@ a {
 .menu_item a:hover {
   color: #ffed22;
 }
+@media (max-width: 63.975em) {
+  .menu_item a {
+    font-size: 0.875rem;
+  }
+}
 .social {
   display: flex;
   align-items: center;
@@ -122,12 +143,18 @@ a {
 .social_item a:hover {
   color: #ffed22;
 }
+@media (max-width: 63.975em) {
+  .social_item a {
+    font-size: 1.25rem;
+  }
+}
 .section {
   position: relative;
 }
 .section_image {
   position: relative;
   display: flex;
+  height: 100%;
   min-height: 60rem;
   background-position: center;
   background-repeat: no-repeat;
@@ -151,6 +178,15 @@ a {
 }
 .section-padding {
   padding: 7rem 0;
+}
+.section-auto {
+  min-height: auto;
+  padding: 12rem 0;
+}
+@media (max-width: 63.975em) {
+  .section-auto {
+    padding: 5rem 0;
+  }
 }
 .bg {
   position: relative;
@@ -610,6 +646,14 @@ a {
 .owl-theme .owl-nav .owl-next {
   right: 1rem;
 }
+.carousel-blue .owl-dots {
+  margin-top: 3rem;
+}
+@media (max-width: 63.975em) {
+  .carousel-blue .owl-dots {
+    margin-top: 1.25rem;
+  }
+}
 .carousel-blue .owl-dots .owl-dot span {
   background: rgba(255, 255, 255, 0.7);
 }
@@ -620,6 +664,14 @@ a {
 .carousel-blue .owl-dots .owl-dot:hover span {
   background: #00749b;
   height: 0.5rem;
+}
+.carousel-pig .owl-dots {
+  margin-top: 3rem;
+}
+@media (max-width: 63.975em) {
+  .carousel-pig .owl-dots {
+    margin-top: 1.25rem;
+  }
 }
 .carousel-pig .owl-dots .owl-dot span {
   background: rgba(255, 255, 255, 0.7);

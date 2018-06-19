@@ -1,10 +1,11 @@
 //- includes/header.pug
 header.header
     .row.align-middle
-        .columns.small-12.medium-6.large-3
+        .columns.small-12.medium-3.large-3
             a.header_logo(href="/")
-                img(src="templates/_ares/img/svg/logo.svg", alt="")
-        .columns.small-12.medium-6.large-6.large-offset-3
+                img(src="templates/_ares/img/svg/logo.svg", alt="", class='header_logo-pc')
+                img(src="templates/_ares/img/svg/logo-mini.svg", alt="", class='header_logo-mob')
+        .columns.small-12.medium-9.large-6.large-offset-3
             .row.align-middle
                 .columns.small-12.medium-6
                     - var menuItem = ['Воспоминания', 'победители'];
