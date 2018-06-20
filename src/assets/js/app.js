@@ -6,7 +6,7 @@ $(document).ready(function() {
     	$(this).children('.i-like').toggleClass('i-like-fill');
     });
 	
-    $('.owl-carousel').owlCarousel({
+    $('.carousel').owlCarousel({
 	    loop:false,
         margin:30,
         nav:true,
@@ -26,25 +26,28 @@ $(document).ready(function() {
 	    }
 	});
 
-	$('.carousel-caralog').owlCarousel({
-	    loop:false,
-        margin:30,
-        nav:true,
-        navText: ['<i class="i-back"></i>','<i class="i-next"></i>'],
-	    responsive:{
-	        0:{
-				items:1,
-				dots: false,
-				nav: false
-	        },
-	        640:{
-	            items:2
-	        },
-	        1000:{
-	            items:4
-	        }
-	    }
-	});
+    
+    if ($(window).width() < '1024'){
+        $('.carousel-caralog').owlCarousel({
+            loop:false,
+            margin:30,
+            nav:true,
+            navText: ['<i class="i-back"></i>','<i class="i-next"></i>'],
+            responsive:{
+                0:{
+                    items:1,
+                    dots: false,
+                    nav: false
+                },
+                640:{
+                    items:2
+                },
+                1024:{
+                    items:4
+                }
+            }
+        });
+    }
 
     $('.file_remove').click(function(event) {
     	$(this).next('.file_img').attr('src', '');

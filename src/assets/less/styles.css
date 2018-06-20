@@ -744,6 +744,10 @@ a {
   background: #cb7297;
   height: 0.25rem;
 }
+.carousel-caralog {
+  display: flex;
+  width: 100%;
+}
 .fixed {
   position: fixed;
   top: 50%;
