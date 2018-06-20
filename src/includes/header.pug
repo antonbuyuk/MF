@@ -3,17 +3,16 @@ header.header
     .row.align-middle
         .columns.small-12.medium-3.large-3
             a.header_logo(href="/")
-                img(src="templates/_ares/img/svg/logo.svg", alt="", class='header_logo-pc')
-                img(src="templates/_ares/img/svg/logo-mini.svg", alt="", class='header_logo-mob')
+                img(src="templates/_ares/img/svg/logo.svg", alt="")
         .columns.small-12.medium-9.large-6.large-offset-3
             .row.align-middle
-                .columns.small-12.medium-6
-                    - var menuItem = ['Воспоминания', 'победители'];
+                .columns.small-12.medium-6.large-7
+                    - var menuItem = ['воспоминания', 'победители'];
                     ul.menu.align-center
                         each val in menuItem
                             li.menu_item
-                                a(href='#')= val
-                .columns.small-12.medium-6
+                                a(href=val)= val
+                .columns.small-12.medium-6.large-5
                     - var socials = ['i-vk-fill', 'i-youtube', 'i-facebook-fill', 'i-twitter-fill', 'i-instagram', 'i-odnoklassniki-fill',];
                     ul.social.align-right
                         each social in socials

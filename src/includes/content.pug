@@ -1,11 +1,11 @@
 //- includes/content.pug
-main.wrapper
+main#top.wrapper
     .section
         .row.collapse
             .columns.small-12.medium-12.large-6
-                .section.section_image(style='background-image: url(templates/_ares/img/png/main.png)')
+                .section.section_image.padding-top.hidden-small(style='background-image: url(templates/_ares/img/png/main.png)')
             .columns.small-12.medium-12.large-6
-                .section.section-blue.section_image(style='background-image: url(templates/_ares/img/svg/main-bg.svg)')
+                .section.section-blue.padding-top-10.section_image(style='background-image: url(templates/_ares/img/svg/main-bg.svg)')
                     .flex.flex_column.flex_height.align-center.padding
                         .title.title_kaushan.title-white MF  summer look
                         .text.text-white
@@ -13,8 +13,8 @@ main.wrapper
                             p Мы объявляем масштабный летний фотоконкурс!
                             p C 18 июня по 31 августа делись фотографиями своих летних луков в одежде от Mark Formelle и участвуй в еженедельном розыгрыше призов!
                         .flex.flex-row.mt-72
-                            a.btn.btn-medium.btn-yellow.mr-30 принять участие
-                            a.btn.btn-medium.btn-float голосование
+                            a.btn.btn-medium.btn-yellow.mr-30(href='#form') принять участие
+                            a.btn.btn-medium.btn-float(href='#voite') голосование
     .section
         .row.collapse
             .columns.small-12.medium-6.large-4
@@ -38,10 +38,10 @@ main.wrapper
     .section
         .row.collapse
             .columns.small-12.medium-12.large-6
-                .section.section_image(style='background-image: url(templates/_ares/img/png/third.png)')
+                .section.section_image.padding-top(style='background-image: url(templates/_ares/img/png/third.png)')
             .columns.small-12.medium-12.large-6
                 .section.section-blue.section_image(style='background-image: url(templates/_ares/img/svg/main-bg.svg)')
-                    .flex.flex_column.flex_height.align-center.padding
+                    #form.flex.flex_column.flex_height.align-center.padding
                         .title.title_mistral.title-white.text-center.mb-40 Поделись своим модным образом
                         .text.text-white.text-center.mb-32
                             p Загрузи свои фото в вещах Mark Formelle. Выбирай фотографии вертикальной ориентации и хорошего качества. Один участник может загрузить до  3-х изображений в неделю.
@@ -60,45 +60,54 @@ main.wrapper
                             .flex.flex-row.align-justify
                                 .form_item.file_upload
                                     input(type='file', onchange="readURL(this);", class='file_input')
+                                    span.file_remove
+                                        i.i-garbage
                                     img#file_img-1(src="#", alt="", class='file_img file_img-1')
                                 .form_item.file_upload
                                     input(type='file', onchange="readURL2(this);", class='file_input')
+                                    span.file_remove
+                                        i.i-garbage
                                     img#file_img-2(src="#", alt="", class='file_img file_img-2')
                                 .form_item.file_upload
                                     input(type='file', onchange="readURL3(this);", class='file_input')
+                                    span.file_remove
+                                        i.i-garbage
                                     img#file_img-3(src="#", alt="", class='file_img file_img-3')
                                 .form_item.file_upload
                                     input(type='file', onchange="readURL4(this);", class='file_input')
+                                    span.file_remove
+                                        i.i-garbage
                                     img#file_img-4(src="#", alt="", class='file_img file_img-4')
                             .form_item
                                 button.btn.btn-medium.btn-yellow(type="submit") Отправить
-    .section.section-purpure.section-padding
+    #voite.section.section-purpure.section-padding
         .row
             .columns.small-12.medium-10.medium-offset-1.large-8.large-offset-2
                 .title.title_mistral.title-white.text-center.mb-40 Голосование
                 .text.text-white.text-center.mb-32
                     p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum m.
         .row.expanded
-            mixin list
-                .columns.small-12.medium-6.large-3
-                    .card
-                        a(data-fancybox="gallery", href='https://placeimg.com/750/1000/any', class="card_link")
-                            span.card_image(style="background-image: url('https://placeimg.com/750/1000/any')")
-                        .card_footer
-                            .card_name Ефимов Виктор
-                            .card_like
-                                i.i-like
-                                span 203
-            +list
-            +list
-            +list
-            +list
-            +list
-            +list
-            +list
-            +list
+            .carousel-caralog.owl-carousel.owl-theme.carousel.carousel-purpure
+                mixin list
+                    .columns.small-12
+                        .card
+                            a(data-fancybox="gallery", href='https://placeimg.com/750/1000/any', class="card_link")
+                                span.card_image(style="background-image: url('https://placeimg.com/750/1000/any')")
+                            .card_footer
+                                .card_name Ефимов Виктор
+                                .card_like
+                                    i.i-like
+                                    span 203
+                +list
+                +list
+                +list
+                +list
+                +list
+                +list
+                +list
+                +list
         .row
-            .columns.small-12
+            .columns.hidden-small.hidden-medium.large-12
                 .flex.align-center.flex-row.mt-72
                     a.btn.btn-medium.btn-float.mr-30 предыдущие 8
                     a.btn.btn-medium.btn-yellow следующие 8
@@ -107,22 +116,23 @@ main.wrapper
             .columns.small-12
                 .title.title_mistral.title-black.text-center.mb-40 Победители прошлой недели
         .row.expanded.small-up-1.medium-up-2.large-up-5
-            mixin list
-                .columns
-                    .card
-                        a(data-fancybox="gallery", href='https://placeimg.com/750/1000/any', class="card_link")
-                            span.card_image(style="background-image: url('https://placeimg.com/750/1000/any')")
-                        .card_footer
-                            .card_name Ефимов Виктор
-                            .card_like
-                                i.i-like-fill
-                                span 203
-            +list
-            +list
-            +list
-            +list
-            +list
-    .section.section-blue.flex_column.section-padding.section_image.section-auto(style='background-image: url(templates/_ares/img/svg/bg-rtava.svg)')
+            .carousel-caralog.owl-carousel.owl-theme.carousel.carousel-purpure
+                mixin list
+                    .columns
+                        .card
+                            a(data-fancybox="gallery", href='https://placeimg.com/750/1000/any', class="card_link")
+                                span.card_image(style="background-image: url('https://placeimg.com/750/1000/any')")
+                            .card_footer
+                                .card_name Ефимов Виктор
+                                .card_like.no-active
+                                    i.i-like-fill
+                                    span 203
+                +list
+                +list
+                +list
+                +list
+                +list
+    #memories.section.section-blue.flex_column.section-padding.section_image.section-auto(style='background-image: url(templates/_ares/img/svg/bg-rtava.svg)')
         .row.expanded
             .columns.small-12
                 .title.title_mistral.title-white.text-center.mb-40 Фотографии предыдущих недель
@@ -145,7 +155,7 @@ main.wrapper
                     +album
                     +album
                     +album
-    .section.section-pig.flex_column.section-padding.section_image.section-auto(style='background-image: url(templates/_ares/img/png/ice.png)')
+    #winner.section.section-pig.flex_column.section-padding.section_image.section-auto(style='background-image: url(templates/_ares/img/png/ice.png)')
         .row.expanded
             .columns.small-12
                 .title.title_mistral.title-white.text-center.mb-40 Победители предыдущих недель
@@ -168,3 +178,13 @@ main.wrapper
                     +album
                     +album
                     +album
+.fixed.fixed-t
+    a(href='#form')
+        i.i-photo-camera
+.fixed.fixed-b
+    a(href='#voite')
+        i.i-like-fill
+
+.fixed.fixed-top
+    a(href='#top')
+        i.i-next

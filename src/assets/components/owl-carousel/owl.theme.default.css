@@ -37,15 +37,16 @@
     text-align: center;
     -webkit-tap-highlight-color: transparent;
     display: flex;
-    align-items: center
-
+    align-items: center;
+    justify-content: center;
 }
 
 .owl-theme .owl-dots .owl-dot {
     zoom: 1;
-    width: 100%;
+    width: 4.25rem;
+    margin: 0 .75rem;
     display: flex;
-    align-items: center
+    align-items: center;
 }
 
 .owl-theme .owl-dots .owl-dot span {
